@@ -80,34 +80,29 @@
                                     </div>
                                     
                                     <div class="card-body">
-                                        <form>
-                                            <div class="mb-3">
-                                                
-                                                <small>(If your email ID is abcd@srmist.edu.in, your NetID is "abcd" and the password is your email password.)</small>
-                                                <br>
-                                                
-                                                <label for="netid" class="form-label"><i class="fas fa-user"></i> NetID</label>
-
-                                                <input type="text" id="netid" class="form-control" 
-                                                       placeholder="Enter NetID (without '@srmist.edu.in')">
-                                            </div>
-                                            
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            <small>(If your email ID is abcd@srmist.edu.in, your NetID is "abcd" and the password is your email password.)</small><br>
+                                            <label for="netid" class="form-label"><i class="fas fa-user"></i> NetID</label>
+                                            <input type="email" name="netid" class="form-control" placeholder="Enter NetID (without '@srmist.edu.in')">
+                                        
                                             <div class="mb-3">
                                                 <label for="password" class="form-label"><i class="fas fa-key"></i> Password</label>
-                                                <input type="password" id="password" class="form-control" 
-                                                       placeholder="Enter your password">
+                                                <input type="password" name="password" class="form-control" placeholder="Enter your password">
                                             </div>
-                                            
+                                        
                                             <div class="mb-3">
                                                 <label for="captcha" class="form-label"><i class="fas fa-shield-alt"></i> Captcha</label>
-                                                <input type="text" id="captcha" class="form-control" 
-                                                       placeholder="Enter captcha text">
+                                                <input type="text" id="captcha" class="form-control" placeholder="Enter captcha text">
                                             </div>
-
+                                        
                                             <button type="submit" class="btn btn-primary w-100">
                                                 <i class="fas fa-sign-in-alt"></i> Login
                                             </button>
                                         </form>
+                                        
+                                        
+                                       
                                     </div>
                                 </div>
                             </div>
